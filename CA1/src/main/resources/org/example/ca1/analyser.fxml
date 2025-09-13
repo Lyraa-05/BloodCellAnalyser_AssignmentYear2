@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="880.0" prefWidth="1658.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ca1.Controller">
+    <children>
+        <StackPane layoutX="33.0" layoutY="181.0" prefHeight="618.0" prefWidth="841.0">
+            <ImageView fx:id="imageOriginal" fitHeight="565.0" fitWidth="767.0" preserveRatio="true" />
+            <Pane fx:id="overlayPane" maxHeight="Infinity" maxWidth="Infinity" mouseTransparent="true" pickOnBounds="false" prefHeight="625.0" prefWidth="734.0" StackPane.alignment="TOP_LEFT" />
+        </StackPane>
+
+        <!-- Separate view for tricolor image (no overlay) -->
+        <ImageView fx:id="imageAnalysed" fitHeight="618.0" fitWidth="719.0" layoutX="925.0" layoutY="227.0" preserveRatio="true" />
+        <MenuButton fx:id="menuButton" alignment="CENTER" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="270.0" text="Choose Image">
+            <items>
+                <MenuItem fx:id="selectImage" mnemonicParsing="false" onAction="#OpenImage" text="Select" />
+            </items>
+            <font>
+                <Font name="System Bold" size="23.0" />
+            </font>
+        </MenuButton>
+        <Slider fx:id="redHueMinSlider" blockIncrement="0.01" layoutX="1230.0" layoutY="44.0" prefHeight="14.0" prefWidth="123.0" />
+        <Slider fx:id="redHueMaxSlider" blockIncrement="0.01" layoutX="1230.0" layoutY="69.0" prefHeight="14.0" prefWidth="123.0" />
+
+        <Slider fx:id="whiteHueMinSlider" blockIncrement="0.01" layoutX="1432.0" layoutY="41.0" prefHeight="14.0" prefWidth="123.0" />
+        <Slider fx:id="whiteHueMaxSlider" blockIncrement="0.01" layoutX="1432.0" layoutY="64.0" prefHeight="14.0" prefWidth="123.0" />
+
+        <Slider fx:id="redSaturationSlider" blockIncrement="0.01" layoutX="1230.0" layoutY="95.0" max="1.0" min="0.0" prefHeight="14.0" prefWidth="123.0" />
+        <Label layoutX="1157.0" layoutY="43.0" text="Hue Min" />
+        <Label layoutX="1156.0" layoutY="67.0" text="Hue Max" />
+        <Label layoutX="1153.0" layoutY="94.0" text="Saturation" />
+        <Label layoutX="1382.0" layoutY="39.0" text="Hue Min" />
+        <Label layoutX="1381.0" layoutY="63.0" text="Hue Max" />
+        <Button fx:id="TricolourButton" layoutX="1496.0" layoutY="-25.0" mnemonicParsing="false" onAction="#convertToTricolorAndAnalyze" text="Convert to Tricolour" />
+        <Label layoutX="1373.0" layoutY="90.0" text="Saturation" />
+        <Slider fx:id="whiteSaturationSlider" blockIncrement="0.01" layoutX="1432.0" layoutY="91.0" max="1.0" min="0.0" prefHeight="14.0" prefWidth="123.0" />
+        <Label layoutX="1226.0" layoutY="17.0" prefHeight="17.0" prefWidth="89.0" style="-fx-background-color: black;" text="Red Blood Cell" textFill="RED">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="1428.0" layoutY="14.0" style="-fx-background-color: black;" text="White Blood Cell" textFill="WHITE" />
+      <Label layoutX="581.0" layoutY="67.0" prefHeight="17.0" prefWidth="164.0" text="Number of red blood cells:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="581.0" layoutY="85.0" text="Number of white blood cells:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="numberofRedLabel" layoutX="749.0" layoutY="67.0" text="Label">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="numberofWhiteLabel" layoutX="749.0" layoutY="85.0" text="Label">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+    </children>
+</AnchorPane>
